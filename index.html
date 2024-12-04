@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K-Means Clustering Web App</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>K-Means Clustering Demo</h1>
+
+    <div class="form-container">
+      <label for="views">Views:</label>
+      <input type="number" id="views" placeholder="Enter Views" />
+
+      <label for="likes">Likes:</label>
+      <input type="number" id="likes" placeholder="Enter Likes" />
+
+      <label for="ratings">Ratings:</label>
+      <input type="number" id="ratings" placeholder="Enter Ratings" />
+
+      <label for="subscribers">Subscribers:</label>
+      <input type="number" id="subscribers" placeholder="Enter Subscribers" />
+
+      <button id="addData">Add Data</button>
+      <br /><br />
+
+      <label for="excelFile">Import Excel File:</label>
+      <input type="file" id="excelFile" accept=".xlsx, .xls" />
+      <button id="importExcel">Import Excel Data</button>
+      <br /><br />
+
+      <label for="displayMode">Display:</label>
+      <select id="displayMode">
+        <option value="sample">Sample (10 rows)</option>
+        <option value="all">All Data</option>
+      </select>
+      <br /><br />
+
+      <button id="elbowMethod">Use Elbow</button>
+      <button id="clusterData">Cluster Data</button>
+    </div>
+
+    <div class="result-container">
+      <h2>Imported Data</h2>
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>Views</th>
+            <th>Likes</th>
+            <th>Ratings</th>
+            <th>Subscribers</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+
+      <h2>Clustering Result</h2>
+      <table id="clusterResultTable">
+        <thead>
+          <tr>
+            <th>Views</th>
+            <th>Likes</th>
+            <th>Ratings</th>
+            <th>Subscribers</th>
+            <th>Cluster</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <canvas id="scatterPlot"></canvas>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
